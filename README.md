@@ -18,6 +18,9 @@ To use this code, you need the following hardware:
 
 [TODO - add photo of completed adapter & full wiring/pinouts]
 
+![cable chain](https://github.com/cryptoterminals/maccryptoterminals/blob/main/IMG_7368.jpg?raw=true)
+
+
 You need to flash your NodeMCU ESP8266 as per instructions here:
 
 https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html#intro
