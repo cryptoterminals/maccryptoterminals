@@ -16,7 +16,6 @@ To use this code, you need the following hardware:
 * 4 breadboard jumper wires connecting Tx, Rx, 3VC, GND between the TTL and:
 * Node MCU ESP8266 https://www.amazon.com/gp/product/B081CSJV2V
 
-[TODO - add photo of completed adapter & full wiring/pinouts]
 
 ![cable chain](https://github.com/cryptoterminals/maccryptoterminals/blob/main/IMG_7368.jpg?raw=true)
 
@@ -38,3 +37,5 @@ https://archive.org/details/hypercard_serialporttoolkit
 and
 
 https://www.info-mac.org/viewtopic.php?f=119&t=1049
+
+![cable chain2](https://github.com/cryptoterminals/maccryptoterminals/blob/main/IMG_7369.jpg?raw=true)
