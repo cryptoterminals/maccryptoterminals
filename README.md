@@ -19,13 +19,19 @@ To use this code, you need the following hardware:
 [TODO - add photo of completed adapter & full wiring/pinouts]
 
 You need to flash your NodeMCU ESP8266 as per instructions here:
+
 https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html#intro
+
 and, upload the python in this repo using the instructions here (I save as main.py):
+
 https://docs.micropython.org/en/latest/esp8266/quickref.html#webrepl-web-browser-interactive-prompt
 
 I use the client: https://github.com/micropython/webrepl
 
 I found reference code for doing serial interactions within Hypercard at 
+
 https://archive.org/details/hypercard_serialporttoolkit
+
 and
+
 https://www.info-mac.org/viewtopic.php?f=119&t=1049
