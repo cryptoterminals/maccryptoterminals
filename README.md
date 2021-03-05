@@ -1,6 +1,8 @@
 # maccryptoterminals
 Micropython and related code for ESP8266-based old-world Mac Crypto Price Terminals
+
 This code is associated w/ the NFT project http://twitter.com/cryptoterminals and https://app.rarible.com/yugen
+
 You are welcome to reuse any of this code or plans - the NFTs associated are the unique items with the exception of some unique artwork in the Hypercard stacks
 
 To use this code, you need the following hardware:
