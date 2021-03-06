@@ -9,7 +9,12 @@ To use this code, you need the following hardware:
 
 * An old-world Mac w/ a DIN8 serial port & Hypercard installed
 * I am testing on OS7 because it has a 'Startup Items' folder
-* A custom 4 wire DIN8 to DB9 cable with the following pinout: [TODO ADD Pinout]
+* A custom 4 wire DIN8 to DB9 cable with the following pinout - the DIN8 connects to the modem/printer port on the Mac - the DB9 connects to the RS422 side of the adapter linked below and in the photo:
+  * DB9F   <>    DIN8M
+  * 1 ----------- 8 RxD+
+  * 2 ----------- 5 RxD-
+  * 3 ----------- 6 TxD+
+  * 4 ----------- 3 TxD-
 * An RS422 to RS232 converter/adapter https://www.amazon.com/gp/product/B0196AO1IG
 * An M/M DB9 null modem coupler https://www.amazon.com/gp/product/B07J6TSF6V
 * A TTL to RS232 adapter https://www.amazon.com/gp/product/B00LPK0Z9A/
