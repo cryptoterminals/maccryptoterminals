@@ -1,6 +1,7 @@
 import network
 import urequests
 import time
+import ntptime
 import json
 import os
 import uos
@@ -8,33 +9,29 @@ import webrepl
 import utime
 from machine import UART
 from time import gmtime
+from machine import RTC
 import sys
+
 
 APNAME = ''
 PASSWORD = ''
-END = '\n'
+#END = '\n'
 SERIALSPEED = 19200
 coingeckorequest = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_last_updated_at=true'
 
 uart = UART(0, baudrate=SERIALSPEED, timeout=1000)
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-#time.sleep(3)
-#print("\n", end="")
+
 
 uos.dupterm(None, 1)
 
+rtc = RTC()
+
 def sendserial(command):
-  #print(command, end=END)
   uart.write(str(command))
   uart.write(str("*"))
   #uart.write('\n')
-
-#def get_serial():
-# s = uart.read(500)
-# if (s != bytes('', 'utf-8')):
-#   #print(s.decode())
-#   return s
 
 def callcg():
   while True:
@@ -45,7 +42,6 @@ def callcg():
     except:
       print("CGCALLFAIL")
       utime.sleep(10)
-
 
 def check_connection():
   while (wlan.isconnected() == False):
@@ -61,18 +57,16 @@ def check_connection():
             pwstop = decoded_input.find('\r', apstop+6)
             if (pwstop > 1):
               PASSWORD = decoded_input[apstop+6:pwstop]
-              sendserial("got apname:")
-              sendserial(APNAME)
-              sendserial("got password:")
-              sendserial(PASSWORD)
               wlan.connect(APNAME, PASSWORD)
       time.sleep(10)
+      ntptime.settime()
     else:
       sendserial(".")
-    #wlan.connect(APNAME, PASSWORD)
-    #time.sleep(20)
   else:
-    sendserial(".")
+    ntptime.settime()
+    sendserial(str(rtc.datetime()))
+
+    #sendserial(".")
     pass
 
 calltimer = 60
@@ -81,7 +75,6 @@ listentimer = 1
 temptimer = 0
 btc_last_call_timestamp = 0
 eth_last_call_timestamp = 0
-
 
 def printprice(prefix, value):
   if (type(value) is float):
@@ -99,15 +92,20 @@ def update(btc_last_call_timestamp, eth_last_call_timestamp):
     pass
   else:
     printprice("BTCP", response['bitcoin']['usd'])
-    sendserial("BTCT" + str(response['bitcoin']['last_updated_at']))
+    #sendserial("BTCT" + str(response['bitcoin']['last_updated_at']))
+    formattedtime = utime.localtime(response['bitcoin']['last_updated_at'])
+    formattedtime = str(formattedtime[3]) + ":" + str("{:02d}".format(formattedtime[4]))
+    sendserial("BTCT" + "Last:  " + str(formattedtime) + " UTC")
   if response['ethereum']['last_updated_at'] == eth_last_call_timestamp:
     pass
   else:
     printprice("ETHP", response['ethereum']['usd'])
-    sendserial("ETHT" + str(response['ethereum']['last_updated_at']))
+    formattedtime = utime.localtime(response['ethereum']['last_updated_at'])
+    formattedtime = str(formattedtime[3]) + ":" + str("{:02d}".format(formattedtime[4]))
+    #sendserial("ETHT" + str(response['ethereum']['last_updated_at']))
+    sendserial("ETHT" + "Last:  " + str(formattedtime) + " UTC")
   eth_last_call_timestamp = response['ethereum']['last_updated_at']
   btc_last_call_timestamp = response['bitcoin']['last_updated_at']
-  #sendserial("#")
   return btc_last_call_timestamp, eth_last_call_timestamp
 
 while True:
@@ -117,13 +115,15 @@ while True:
   while calltimer > 0:
     input = uart.read(500)
     #input = uart.readline()
-    #sendserial(input)
-    #input = uart.read(100)
     if input == bytes('UPDA', 'utf-8'):
       btc_last_call_timestamp, eth_last_call_timestamp = update(btc_last_call_timestamp, eth_last_call_timestamp)
-      #uart.write(str('NEON'))
     elif input == bytes('WIFIGO', 'utf-8'):
       sendserial("OKNEWWIFI...")
+      PASSWORD = '.'
+      AP = '.'
+      wlan.active(False)
+      wlan.active(True)
+      wlan.connect(APNAME, PASSWORD)
     elif (input == bytes('WIFI', 'utf-8')):
       uart.write(str('WIFI'))
       sendserial(str(wlan.ifconfig()))
