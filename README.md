@@ -10,6 +10,7 @@ To use this code, you need the following hardware:
 * An old-world Mac w/ a DIN8 serial port & Hypercard installed
 * I am testing on OS7 because it has a 'Startup Items' folder
 * A custom 4 wire DIN8 to DB9 cable with the following pinout - the DIN8 connects to the modem/printer port on the Mac - the DB9 connects to the RS422 side of the adapter linked below and in the photo:
+
  DIN8F MAC SIDE _______________________ DIN8M CABLE END
  ___8__7__6______________________________6__7__8
  ___5__4__3______________________________3__4__5
