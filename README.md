@@ -41,7 +41,7 @@ You need to flash your NodeMCU ESP8266 as per instructions here:
 
 https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html#intro
 
-and, upload the python in this repo using the instructions here (I save as main.py):
+and, upload the python in this repo using the instructions here (I save as main.py which runs on startup by default per the Micropython setup):
 
 https://docs.micropython.org/en/latest/esp8266/quickref.html#webrepl-web-browser-interactive-prompt
 
