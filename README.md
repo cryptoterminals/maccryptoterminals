@@ -1,7 +1,7 @@
 # maccryptoterminals
 Micropython and related code for ESP8266-based old-world Mac Crypto Price Terminals
 
-This code is associated w/ the NFT project http://twitter.com/cryptoterminals and https://app.rarible.com/yugen
+This code is associated w/ the NFT project http://twitter.com/cryptoterminals and https://opensea.io/assets/0x2532a770211bf10435c70d889357b1a820260be1/1
 
 ![Mac Crypto Terminal](https://github.com/cryptoterminals/maccryptoterminals/blob/main/Screenshot_2021-03-09_15-25-08.png?raw=true)
 
