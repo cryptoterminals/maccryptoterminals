@@ -37,18 +37,37 @@ To use this code, you need the following hardware:
 ![cable chain](https://github.com/cryptoterminals/maccryptoterminals/blob/main/IMG_7368.jpg?raw=true)
 
 
-You need to flash your NodeMCU ESP8266 as per instructions here:
+You need to erase & flash your NodeMCU ESP8266 as per instructions here:
 
 https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html#intro
-
-and, upload the python in this repo using the instructions here (I save as main.py which runs on startup by default per the Micropython setup):
-
-https://docs.micropython.org/en/latest/esp8266/quickref.html#webrepl-web-browser-interactive-prompt
 
 Assuming /dev/ttyUSB0:
 ```
 esptool.py --port /dev/ttyUSB0 erase_flash
 ```
+Assuming esp8266-20210202-v1.14.bin:
+```
+esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin
+```
+Connect to serial to turn on web_repl:
+```
+[user@LinuxWorkstation Downloads]$ picocom -b 115200 /dev/ttyUSB0
+>>> import webrepl_setup
+WebREPL daemon auto-start status: disabled
+
+Would you like to (E)nable or (D)isable it running on boot?
+(Empty line to quit)
+> E
+To enable WebREPL, you must set password for it
+New password (4-9 chars): password
+Confirm password: password
+Changes will be activated after reboot
+Would you like to reboot now? (y/n) y
+```
+
+and, upload the python in this repo using the instructions here (I save as main.py which runs on startup by default per the Micropython setup):
+
+https://docs.micropython.org/en/latest/esp8266/quickref.html#webrepl-web-browser-interactive-prompt
 
 I use the client: https://github.com/micropython/webrepl
 
