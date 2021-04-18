@@ -45,6 +45,11 @@ and, upload the python in this repo using the instructions here (I save as main.
 
 https://docs.micropython.org/en/latest/esp8266/quickref.html#webrepl-web-browser-interactive-prompt
 
+Assuming /dev/ttyUSB0:
+```
+esptool.py --port /dev/ttyUSB0 erase_flash
+```
+
 I use the client: https://github.com/micropython/webrepl
 
 I found reference code for doing serial interactions within Hypercard at 
