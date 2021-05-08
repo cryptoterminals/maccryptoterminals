@@ -5,7 +5,7 @@ This code is associated w/ the NFT project http://twitter.com/cryptoterminals an
 
 ![Mac Crypto Terminal](https://github.com/cryptoterminals/maccryptoterminals/blob/main/Screenshot_2021-03-09_15-25-08.png?raw=true)
 
-This project run Micropython on an ESP8266 to fetch prices from the free Coingecko API for Bitcoin and Ethereum. On the Mac side, a Hypercard stack uses the serial port to connect to the ESP8266 and receive prices and configure the connection (Wifi credentials, request updates from the server)
+This project runs Micropython on an ESP8266 to fetch prices from the free Coingecko API for Bitcoin and Ethereum. On the Mac side, a Hypercard stack uses the serial port to connect to the ESP8266 and receive prices and configure the connection (Wifi credentials, request updates from the server)
 
 You are welcome to reuse any of this code or plans - the NFTs associated are the unique items with the exception of some unique artwork in the Hypercard stacks
 
