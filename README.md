@@ -74,6 +74,10 @@ https://docs.micropython.org/en/latest/esp8266/quickref.html#webrepl-web-browser
 
 I use the client: https://github.com/micropython/webrepl
 
+To connect to the ESP8266, connect your Wifi to the Micropython AP using password micropythoN
+
+Click connect, and send the python code. Connect to your Mac Plus and reboot. 
+
 I found reference code for doing serial interactions within Hypercard at 
 
 https://archive.org/details/hypercard_serialporttoolkit
