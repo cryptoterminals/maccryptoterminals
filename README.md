@@ -52,7 +52,7 @@ Assuming esp8266-20210202-v1.14.bin:
 ```
 esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin
 ```
-Connect to serial to turn on web_repl:
+Connect to serial to turn on web_repl and set a password - use Ctrl-a, then x to break out:
 ```
 [user@LinuxWorkstation Downloads]$ picocom -b 115200 /dev/ttyUSB0
 >>> import webrepl_setup
