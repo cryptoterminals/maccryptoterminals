@@ -3,7 +3,7 @@ Micropython and related code for ESP8266-based old-world Mac Crypto Price Termin
 
 This code is associated w/ the NFT project http://twitter.com/cryptoterminals and https://opensea.io/assets/0x2532a770211bf10435c70d889357b1a820260be1/1
 
-![Mac Crypto Terminal](https://github.com/cryptoterminals/maccryptoterminals/blob/main/Screenshot_2021-03-09_15-25-08.png?raw=true)
+![Mac Crypto Terminal](https://github.com/cryptoterminals/maccryptoterminals/blob/main/punksterminal.png?raw=true)
 
 This project runs Micropython on an ESP8266 to fetch prices from the free Coingecko API for Bitcoin and Ethereum. On the Mac side, a Hypercard stack uses the serial port to connect to the ESP8266 and receive prices and configure the connection (Wifi credentials, request updates from the server)
 
