@@ -29,9 +29,8 @@ To use this code, you need the following hardware:
   * 2 ----------- 5 RxD-                          
   * 3 ----------- 6 TxD+                          
   * 4 ----------- 3 TxD-
-* ~~An RS422 to RS232 converter/adapter https://www.amazon.com/gp/product/B0196AO1IG~~
-  * The latest design does NOT use the RS422/232 adapter in the photo - just use the cable above without the converter or the null modem coupler:
-* ~~An M/M DB9 null modem coupler https://www.amazon.com/gp/product/B07J6TSF6V~~
+* An RS422 to RS232 converter/adapter https://www.amazon.com/gp/product/B0196AO1IG
+* An M/M DB9 null modem coupler https://www.amazon.com/gp/product/B07J6TSF6V
 * A TTL to RS232 adapter https://www.amazon.com/gp/product/B00LPK0Z9A/
 * 4 breadboard jumper wires STRAIGHT connecting Tx<->Tx, Rx<->Rx, 3VC<->3V, GND<->GND between the TTL and:
 * Node MCU ESP8266 https://www.amazon.com/gp/product/B081CSJV2V
