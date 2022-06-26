@@ -1,13 +1,13 @@
 # maccryptoterminals
 Micropython and related code for ESP8266-based old-world Mac Crypto Price Terminals
 
-This code is associated w/ the NFT project http://twitter.com/cryptoterminals and https://opensea.io/assets/0x2532a770211bf10435c70d889357b1a820260be1/1
+This code is associated w/ the NFT project http://twitter.com/cryptoterminals and https://opensea.io/assets/0x2532a770211bf10435c70d889357b1a820260be1/1 and https://foundation.app/@Yugen
 
 ![Mac Crypto Terminal](https://github.com/cryptoterminals/maccryptoterminals/blob/main/punksterminal.png?raw=true)
 
-This project runs Micropython on an ESP8266 to fetch prices from the free Coingecko API for Bitcoin and Ethereum. On the Mac side, a Hypercard stack uses the serial port to connect to the ESP8266 and receive prices and configure the connection (Wifi credentials, request updates from the server)
+This project runs Micropython on an ESP8266 to fetch prices from the free Coingecko API for Bitcoin, Ethereum and 3 stablecoins. It also retrieves the last cryptopunks sale and floor price from http://www.punksfloorprice.com/. On the Mac side, a Hypercard stack uses the serial port to connect to the ESP8266 and receive prices and configure the connection (Wifi credentials, request updates from the server). This is tested on an 8Mhz Mac Plus. Faster Macs may work, but the Hypercard stack is paced via trial-and-error and probably breaks on a faster Mac with unpredictable results. It should be fixable with the right amount of sleep time between polls/updates. 
 
-You are welcome to reuse any of this code or plans - the NFTs associated are the unique items with the exception of some unique artwork in the Hypercard stacks
+You are welcome to reuse any of this code or plans - the NFTs associated and the custom Hypercard stack are the unique items. The included .img has a base Hypercard stack that includes the serial functionality, but it's missing the code to talk to the ESP8266...If there is interest I can put up a reference example without the artwork. 
 
 To use this code, you need the following hardware:
 
